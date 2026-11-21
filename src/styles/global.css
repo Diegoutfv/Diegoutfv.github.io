@@ -43,7 +43,7 @@ h2 { margin: 0 0 20px; font-size: 1.6rem; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
 .card h3 { margin: 0 0 6px; }
 .card p { color: var(--muted); margin: 6px 0 12px; }
-.captura { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: contain; background: #111; border-radius: 8px; margin-bottom: 12px; }
+.captura { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #111; border-radius: 8px; margin-bottom: 12px; }
 .captura.vacia { display: grid; place-items: center; color: var(--muted); background: var(--bg); border: 1px dashed var(--border); font-weight: 600; }
 .muted { color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }

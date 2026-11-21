@@ -48,6 +48,7 @@ export const proyectos = [
   },
   {
     nombre: 'Spotify Inmortalizado',
+    imagen: 'proyectos/spotify.png',
     descripcion:
       'Reproductor de escritorio ligero para Spotify Premium con OAuth PKCE, playlists, búsqueda y teclas multimedia. Pesa pocos MB y usa poca RAM.',
     tecnologias: ['Tauri', 'Rust', 'JavaScript', 'HTML', 'CSS'],
@@ -55,6 +56,7 @@ export const proyectos = [
   },
   {
     nombre: 'Delivery App',
+    imagen: 'proyectos/delivery.png',
     descripcion:
       'App Android de delivery con catálogo, carrito, persistencia local y estado reactivo, siguiendo Clean Architecture.',
     tecnologias: ['Kotlin', 'Jetpack Compose', 'Room', 'Hilt'],
