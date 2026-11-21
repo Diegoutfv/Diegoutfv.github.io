@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+import { perfil, estudios, lenguajes, basesDatos, tecnologias, proyectos } from '../data/datos';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`Portafolio de evidencias de ${perfil.nombre}, ${perfil.titulo}`} />
+    <title>{perfil.nombre} | Portafolio</title>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <a href="#inicio">Inicio</a>
+        <a href="#datos">Datos</a>
+        <a href="#estudios">Estudios</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+
+    <main class="wrap">
+      <header class="hero" id="inicio">
+        <img src={`${base}/${perfil.foto}`} alt={`Fotografía de ${perfil.nombre}`} />
+        <div>
+          <h1>{perfil.nombre}</h1>
+          <h2 style="margin:0 0 8px;font-size:1.2rem;color:var(--accent)">{perfil.titulo}</h2>
+          <p>{perfil.resumen}</p>
+          <a class="btn" href="#proyectos">Ver proyectos</a>
+          <a class="btn sec" href={perfil.github} target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </header>
+
+      <section id="datos">
+        <h2>Datos personales</h2>
+        <div class="card">
+          <dl>
+            {perfil.datos.map((d) => (<><dt>{d.etiqueta}</dt><dd>{d.valor}</dd></>))}
+          </dl>
+        </div>
+      </section>
+
+      <section id="estudios">
+        <h2>Estudios</h2>
+        <div class="timeline">
+          {estudios.map((e) => (
+            <div class="card">
+              <h3>{e.titulo}</h3>
+              <div class="muted">{e.institucion} · {e.periodo}</div>
+              {e.detalle && <p>{e.detalle}</p>}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="tecnologias">
+        <h2>Tecnologías y plataformas</h2>
+        <h4>Lenguajes de programación</h4>
+        <ul class="tags">{lenguajes.map((t) => <li>{t}</li>)}</ul>
+        <h4>Bases de datos</h4>
+        <ul class="tags">{basesDatos.map((t) => <li>{t}</li>)}</ul>
+        <h4>Tecnologías y plataformas</h4>
+        <ul class="tags">{tecnologias.map((t) => <li>{t}</li>)}</ul>
+      </section>
+
+      <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="grid">
+          {proyectos.map((p) => (
+            <article class="card">
+              <h3>{p.nombre}</h3>
+              <p>{p.descripcion}</p>
+              <ul class="tags">{p.tecnologias.map((t) => <li>{t}</li>)}</ul>
+              <p style="margin-bottom:0"><a href={p.enlace} target="_blank" rel="noopener">Ver repositorio →</a></p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <p>
+          <a class="btn" href={`mailto:${perfil.email}`}>Escribirme</a>
+          <a class="btn sec" href={perfil.github} target="_blank" rel="noopener">github.com/Diegoutfv</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>© {new Date().getFullYear()} {perfil.nombre} · Hecho con Astro</footer>
+  </body>
+</html>
