@@ -40,6 +40,7 @@ export const tecnologias = [
 export const proyectos = [
   {
     nombre: 'InputDeck',
+    imagen: 'proyectos/inputdeck.png', // las imágenes van en public/proyectos/
     descripcion:
       'Visor de entradas multiplataforma para OBS: muestra control (Xbox, DualSense, Switch 2 Pro), teclado y mouse con estilo minimalista.',
     tecnologias: ['Python', 'SDL', 'OBS'],
