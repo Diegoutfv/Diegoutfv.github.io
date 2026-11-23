@@ -6,7 +6,7 @@ export const perfil = {
   titulo: 'Desarrollador de Software',
   resumen:
     'Desarrollador de software apasionado por crear aplicaciones web, de escritorio y móviles. Me interesa la arquitectura limpia y construir herramientas útiles.', // TODO: ajusta tu presentación
-  foto: 'foto.jpg', // TODO: reemplaza public/foto.jpg por tu fotografía
+  foto: 'foto.jpg', // public/foto.jpg
   github: 'https://github.com/Diegoutfv',
   email: 'sf117off@gmail.com',
   datos: [
